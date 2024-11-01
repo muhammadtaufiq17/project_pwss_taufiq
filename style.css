@@ -27,3 +27,44 @@ main {
 ul {
     list-style-type: none;
 }
+.about {
+    display: flex; /
+    align-items: center;
+    overflow: auto;
+}
+
+.about-image {
+    width: 700px;
+    height: auto;
+    margin-right:
+}
+p{
+    padding-left: 50px;
+    padding-right: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-align: justify;
+}
+article {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #a0dea7;
+    border-bottom: 1px solid #c4c4c4;
+}
+h1{
+    text-align: center;
+}
+table {
+    width: 80%; 
+    border-collapse: collapse; 
+    margin: 20px auto; 
+}
+th, td {
+    padding: 10px; 
+    border: 1px solid #279c35; 
+    text-align: left; 
+}
+th {
+    background-color: #f2f2f2; 
+}

@@ -16,6 +16,8 @@
             <a href="registration.php">Registrasi</a>
         </nav>
     </header>
+
+    <!-- INI MERUPAKAN IMPLEMENTASI MATERI FORM -->
     <form id="formRegistrasi" action="submit.php" method="post">
         <h1>Form Registrasi</h1>
         <div class="form-group">
@@ -34,10 +36,18 @@
                 <option value="pr">Perempuan</option>
             </select>
             </label>
-            <!-- <input type="checkbox" id="lp" name="jnsKlm[]" value="lp">
-            <label for="lp">Laki-laki</label>
-            <input type="checkbox" id="pr" name="jnsKlm[]" value="pr">
-            <label for="pr">Perempuan</label> -->
+        </div>
+        <div class="form-group">
+            <label for="alamat">Email :</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="alamat">No HP :</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="alamat">Genre Favorit :</label>
+            <input type="text" id="genre" name="genre" required>
         </div>
         <div class="btn-group">
             <button id="buttonRegistrasi" type="submit" class="btn">Daftar</button>
@@ -45,7 +55,8 @@
         </div>
     </form>
     <script>
-        document.getElementById("buttonRegistrasi").addEventListener("click", function(event) {
+        // Ini merupakan implementasi materi Fungsi
+        document.getElementById("buttonRegistrasi").addEventListener("click", function(event) { 
             event.preventDefault();
             var form = document.getElementById("formRegistrasi");
             var nama = form.elements["nama"].value;
@@ -53,8 +64,12 @@
             form.elements["nama"].value = '';
             form.elements["alamat"].value = '';
             form.elements["jnsKL"].value = 'empty';
+            form.elements["email"].value = '';
+            form.elements["phone"].value = '';
+            form.elements["genre"].value = '';
         });
     
+        // Ini merupakan implementasi materi Fungsi
         document.getElementById("buttonBatal").addEventListener("click", function() {
             window.location.href = "latihan_13.html"; // Replace with your desired URL
         });
