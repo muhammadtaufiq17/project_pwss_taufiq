@@ -21,11 +21,5 @@ $buku_favorit   = $_POST['buku_favorit'];
 $sql = "INSERT INTO members (nama, alamat, jnsKL, email, phone, genre, buku_favorit)
         VALUES ('$nama', '$alamat', '$jnsKL', '$email', '$phone', '$genre', '$buku_favorit')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Registration successful. <a href='member.php'>View Members</a>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
 $conn->close();
 ?>

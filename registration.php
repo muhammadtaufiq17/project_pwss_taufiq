@@ -61,7 +61,7 @@
     <script>
         // Ini merupakan implementasi materi Fungsi
         document.getElementById("buttonBatal").addEventListener("click", function() {
-            window.location.href = "latihan_13.html"; // Replace with your desired URL
+            window.location.href = "latihan_13.html";
         });
     </script>
     <footer>
