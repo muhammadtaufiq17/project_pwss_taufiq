@@ -49,26 +49,16 @@
             <label for="alamat">Genre Favorit :</label>
             <input type="text" id="genre" name="genre" required>
         </div>
+        <div class="form-group">
+            <label for="alamat">Buku Favorit :</label>
+            <input type="text" id="buku_favorit" name="buku_favorit" required>
+        </div>
         <div class="btn-group">
             <button id="buttonRegistrasi" type="submit" class="btn">Daftar</button>
             <button id="buttonBatal" type="button" class="btn cancel">Batal</button>
         </div>
     </form>
     <script>
-        // Ini merupakan implementasi materi Fungsi
-        document.getElementById("buttonRegistrasi").addEventListener("click", function(event) { 
-            event.preventDefault();
-            var form = document.getElementById("formRegistrasi");
-            var nama = form.elements["nama"].value;
-            alert("Selamat '" + nama + "' sudah terdaftar");
-            form.elements["nama"].value = '';
-            form.elements["alamat"].value = '';
-            form.elements["jnsKL"].value = 'empty';
-            form.elements["email"].value = '';
-            form.elements["phone"].value = '';
-            form.elements["genre"].value = '';
-        });
-    
         // Ini merupakan implementasi materi Fungsi
         document.getElementById("buttonBatal").addEventListener("click", function() {
             window.location.href = "latihan_13.html"; // Replace with your desired URL

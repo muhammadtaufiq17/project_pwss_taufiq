@@ -1,3 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "book_club";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, nama, phone, email, genre, alamat, buku_favorit FROM members";
+$result = $conn->query($sql);
+?>
 
 <html>
 <head>
@@ -22,70 +37,32 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Genre Favorit</th>
+                <th>Buku Favorit</th>
                 <th>Domisili</th>
+                <th>Email</th>
+                <th>No. HP</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Andi laksono</td>
-                <td>Sejarah</td>
-                <td>Jogja Kota</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Martha</td>
-                <td>Sains-Fiksi</td>
-                <td>Jogja Kota</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Budi Santoso</td>
-                <td>Non Fiksi</td>
-                <td>Magelang</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Dani Farhan</td>
-                <td>Sejarah</td>
-                <td>Sleman</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Mustafa</td>
-                <td>Komik</td>
-                <td>Klaten</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Indah Pratiwi</td>
-                <td>Fiksi Remaja</td>
-                <td>Sleman</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Theodore Adi</td>
-                <td>Non Fiksi</td>
-                <td>Sleman</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Agung Cahyo</td>
-                <td>Komik</td>
-                <td>Bantul</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Kio Purnomo</td>
-                <td>Non Fiksi</td>
-                <td>Bantul</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Amelia Hadi</td>
-                <td>Sains-Fiksi</td>
-                <td>Bantul</td>
-            </tr>
-            <!-- Add more members as needed -->
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row["id"] . "</td>
+                            <td>" . $row["nama"] . "</td>
+                            <td>" . $row["genre"] . "</td>
+                            <td>" . $row["buku_favorit"] . "</td>
+                            <td>" . $row["alamat"] . "</td>
+                            <td>" . $row["email"] . "</td>
+                            <td>" . $row["phone"] . "</td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>No members found</td></tr>";
+            }
+            ?>
         </table>
     </main>
 </body>
 </html>
+<?php
+$conn->close();
+?>
