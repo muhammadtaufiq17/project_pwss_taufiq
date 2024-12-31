@@ -14,6 +14,7 @@
             <a href="index.php">Home</a>
             <a href="member.php">Anggota</a>
             <a href="registration.php">Registrasi</a>
+            <a href="event.php">Acara</a>
         </nav>
     </header>
 

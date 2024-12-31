@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, nama, phone, email, genre, alamat, buku_favorit FROM members";
+$sql = "SELECT id, nama, genre, alamat, buku_favorit FROM members";
 $result = $conn->query($sql);
 ?>
 
@@ -28,6 +28,7 @@ $result = $conn->query($sql);
             <a href="index.php">Home</a>
             <a href="member.php">Anggota</a>
             <a href="registration.php">Registrasi</a>
+            <a href="event.php">Acara</a>
         </nav>
     </header>
     <main>
@@ -39,8 +40,8 @@ $result = $conn->query($sql);
                 <th>Genre Favorit</th>
                 <th>Buku Favorit</th>
                 <th>Domisili</th>
-                <th>Email</th>
-                <th>No. HP</th>
+                <!-- <th>Email</th> -->
+                <!-- <th>No. HP</th> -->
             </tr>
             <?php
             if ($result->num_rows > 0) {
@@ -51,8 +52,6 @@ $result = $conn->query($sql);
                             <td>" . $row["genre"] . "</td>
                             <td>" . $row["buku_favorit"] . "</td>
                             <td>" . $row["alamat"] . "</td>
-                            <td>" . $row["email"] . "</td>
-                            <td>" . $row["phone"] . "</td>
                           </tr>";
                 }
             } else {
