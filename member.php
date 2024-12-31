@@ -1,3 +1,4 @@
+<!-- INI ADALAH CONTOH KONEKSI KE DATABASE -->
 <?php
 $servername = "localhost";
 $username = "root";

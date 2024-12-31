@@ -1,4 +1,4 @@
-
+<!-- INI ADALAH CONTOH KONEKSI KE DATABASE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
